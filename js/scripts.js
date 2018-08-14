@@ -5,24 +5,30 @@ $(document).ready(function(event) {
 //   $(".yourSentence").text(userInput);
 //   $(".yourSentence").show(userInput);
 //
-  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  // var vowels = ['a', 'e', 'i', 'o', 'u'];
 
   var userInput = $("input#enterInput").val();
-  var noVowelsArr = userInput.split(vowels[i]);
-  var noVowelStr = noVowelsArr.join("-");
+  // var noVowelsArr = userInput.split("i");
+  // var noVowelStr = noVowelsArr.join("-");
 
-  for (var i = 0; i < vowels.length; i++) {
-
-
+  // for (var i = 0; i < vowels.length; i++) {
 
 
+var userArr = userInput.split("");
 
+for (var i = 0; i <= userArr.length; i ++) {
+  if (userArr[i] === "a" || userArr[i] === "e" || userArr[i] === "i" || userArr[i] === "o" || userArr[i] === "u") {
+    userArr.splice(i, 1, "-");
+  }
 }
-
-
-
-
+  var noVowelStr = userArr.join("");
   $(".yourSentence").text(noVowelStr);
+});
+
+
+
+
+  // $(".yourSentence").text(noVowelStr);
 //
 //   var vowelled = $("Your i sentence here!");
 //   var devolvingArr = vowelled.split("i");
@@ -48,5 +54,5 @@ $(document).ready(function(event) {
   // var sentenceString = ["Believe you can and you're halfway there."]
 
   // var extractedVowels = sentenceString.map(function(vowel) {//   return vowel
-  });
-});
+  // });
+ });
